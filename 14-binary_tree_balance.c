@@ -39,6 +39,8 @@ int binary_tree_balance(const binary_tree_t *tree)
 	binary_tree_t *p, *q;
 	int a, b, bf;
 
+	if (tree == NULL)
+		return (0);
 	p = tree->left;
 	q = tree->right;
 
