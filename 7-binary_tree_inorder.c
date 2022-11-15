@@ -13,6 +13,8 @@ void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int))
 {
 	const binary_tree_t *dum;
 
+	if ((func) == NULL)
+		return;
 	if (tree)
 	{
 		dum = tree;
