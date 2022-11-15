@@ -71,9 +71,9 @@ int binary_tree_is_full(const binary_tree_t *tree)
 		return (binary_tree_is_full(tree->left) && binary_tree_is_full(tree->right));
 	}
 	return (0);
-}7
+}
 
-/*7*
+/**
  * binary_tree_is_perfect - checks if a binary tree is perfect
  * @tree: the pointer to the root node
  *
