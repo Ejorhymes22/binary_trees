@@ -2,7 +2,7 @@
 #include "binary_trees.h"
 
 /*
- * binary_tree_node - createsabinary tree node
+ * binary_tree_node - creates abinary tree node
  * @parent: the parent node
  * @value: its value
  *
@@ -21,12 +21,9 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 	}
 
 	new->n = value;
-	if (!parent)
-	{
-		new->left = NULL;
-		new->right = NULL;
-		new->parent = NULL;
-	}
+	new->left = NULL;
+	new->right = NULL;
+	new->parent = parent;
 
 
 	if (parent)
@@ -35,8 +32,6 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 			parent->left = new;
 		else
 			parent->right = new;
-
-		new->parent = parent;
 	}
 	return (new);
 }
