@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include "binary_trees.h"
+#include <stdio.h>
 
 /**
  * binary_tree_height - measures the height of a binary tree
@@ -41,7 +42,10 @@ void rec_binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int),
 	if (tree == NULL)
 		return;
 	if (h == 1)
+	{
 		(func)(tree->n);
+	}
+		
 	else if (h > 1)
 	{
 		rec_binary_tree_levelorder(tree->left, func, h - 1);
@@ -63,6 +67,7 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 
 	h = binary_tree_height(tree);
 
-	for (; i < h; i++)
+	h = h + h;
+	for (; i <= h; i++)
 		rec_binary_tree_levelorder(tree, func, i);
 }
